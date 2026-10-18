@@ -1,0 +1,87 @@
+{
+  "id": "ledger",
+  "name": "Ledger",
+  "bestFor": "Investor updates and board-ready decks",
+  "mood": "Navy and old gold, a bookish serif, quiet rings.",
+  "fonts": {
+    "head": "Source Serif 4",
+    "body": "Source Sans 3"
+  },
+  "tokens": {
+    "bg": "#FBFAF7",
+    "surface": "#F2F0EA",
+    "ink": "#0F1A2E",
+    "muted": "#586173",
+    "line": "#E3E0D8",
+    "accent": "#2F5D9E",
+    "accent2": "#B08D57",
+    "accentInk": "#FFFFFF",
+    "positive": "#1D7A4F",
+    "negative": "#B4322B",
+    "cover": "linear-gradient(165deg, #15294B 0%, #0D1C35 55%, #081326 100%)",
+    "coverInk": "#F4F1EA",
+    "headFont": "'Source Serif 4', ui-serif, Georgia, 'Times New Roman', serif",
+    "bodyFont": "'Source Sans 3', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "8px",
+    "headWeight": 600,
+    "headCase": "none",
+    "headTrack": "-0.015em",
+    "decoration": "rings"
+  },
+  "googleFonts": "family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "traction",
+    "growth",
+    "problem",
+    "solution",
+    "product",
+    "market",
+    "business-model",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Tallymoor",
+    "oneLiner": "Payroll and tips, done right for small restaurants.",
+    "lede": "Owners run payroll in ten minutes, and staff see their tips the same night.",
+    "round": "Series A · $6M",
+    "year": "2026",
+    "website": "tallymoor.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "1,240 restaurants pay us every month",
+      "note": "Restaurants on a paid plan, by quarter.",
+      "unit": "restaurants",
+      "labels": [
+        "Q3 '25",
+        "Q4 '25",
+        "Q1 '26",
+        "Q2 '26",
+        "Q3 '26",
+        "Q4 '26"
+      ],
+      "values": [
+        310,
+        470,
+        650,
+        840,
+        1030,
+        1240
+      ],
+      "callouts": [
+        {
+          "value": "$2.9M",
+          "label": "yearly revenue"
+        },
+        {
+          "value": "1.6%",
+          "label": "of restaurants leave each month"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "stage",
+  "name": "Stage",
+  "bestFor": "Demo days and big-room pitches",
+  "mood": "A spotlight in the dark, beams of light, bold sans titles.",
+  "fonts": {
+    "head": "Manrope",
+    "body": "Manrope"
+  },
+  "tokens": {
+    "bg": "#FAFBFC",
+    "surface": "#EEF2F7",
+    "ink": "#0E2238",
+    "muted": "#566476",
+    "line": "#E1E7EE",
+    "accent": "#2563EB",
+    "accent2": "#93B9F8",
+    "accentInk": "#FFFFFF",
+    "positive": "#157A4F",
+    "negative": "#C8372D",
+    "cover": "radial-gradient(60% 75% at 50% 30%, #1E2938 0%, #0A0D12 62%, #000000 100%)",
+    "coverInk": "#F2F5F8",
+    "headFont": "'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "14px",
+    "headWeight": 800,
+    "headCase": "none",
+    "headTrack": "-0.03em",
+    "decoration": "rays"
+  },
+  "googleFonts": "family=Manrope:wght@400;500;600;800&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Crowdcue",
+    "oneLiner": "Sell out small venues without the big ticket fees.",
+    "lede": "Ticketing for clubs and halls under 500 seats, with fair fees and next-day payouts.",
+    "round": "Seed round · $2M",
+    "year": "2026",
+    "website": "crowdcue.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "48,000 tickets sold last month",
+      "note": "Tickets sold through Crowdcue each month, in thousands.",
+      "unit": "k tickets",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        9,
+        14,
+        21,
+        27,
+        36,
+        48
+      ],
+      "callouts": [
+        {
+          "value": "230",
+          "label": "venues selling with us"
+        },
+        {
+          "value": "4.8★",
+          "label": "average rating from venues"
+        }
+      ]
+    }
+  }
+}

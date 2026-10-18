@@ -1,0 +1,85 @@
+{
+  "id": "meadow",
+  "name": "Meadow",
+  "bestFor": "Agritech, climate and calm impact stories",
+  "mood": "Sage paper, field green, a sunny yellow over the hill.",
+  "fonts": {
+    "head": "Lora",
+    "body": "Nunito Sans"
+  },
+  "tokens": {
+    "bg": "#EDEBDF",
+    "surface": "#F6F5EE",
+    "ink": "#1F2A1C",
+    "muted": "#4F5847",
+    "line": "#DAD7C4",
+    "accent": "#EDBD0F",
+    "accent2": "#3A5F30",
+    "accentInk": "#1F2A1C",
+    "positive": "#2A7A62",
+    "negative": "#B23F32",
+    "cover": "linear-gradient(160deg, #42613A 0%, #2B4226 100%)",
+    "coverInk": "#F3F1E6",
+    "headFont": "'Lora', ui-serif, Georgia, 'Times New Roman', serif",
+    "bodyFont": "'Nunito Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "20px",
+    "headWeight": 600,
+    "headCase": "none",
+    "headTrack": "-0.015em",
+    "decoration": "hill"
+  },
+  "googleFonts": "family=Lora:wght@500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "why-now",
+    "product",
+    "market",
+    "traction",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Furrowly",
+    "oneLiner": "Soil sensors that tell small farms when to water.",
+    "lede": "A $40 sensor and a text message each morning. Farmers use less water and grow more.",
+    "round": "Pre-seed · $750k",
+    "year": "2026",
+    "website": "furrowly.example",
+    "growth": {
+      "eyebrow": "Early traction",
+      "title": "320 farms in our first pilot season",
+      "note": "Farms using Furrowly sensors each month.",
+      "unit": "farms",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        20,
+        45,
+        90,
+        160,
+        240,
+        320
+      ],
+      "callouts": [
+        {
+          "value": "-31%",
+          "label": "water used on pilot farms"
+        },
+        {
+          "value": "2",
+          "label": "farm co-ops ready to resell"
+        }
+      ]
+    }
+  }
+}

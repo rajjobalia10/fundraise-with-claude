@@ -1,0 +1,88 @@
+{
+  "id": "ember",
+  "name": "Ember",
+  "bestFor": "Pre-seed and seed decks that feel warm and human",
+  "mood": "Warm cream paper, a coral glow, a soft editorial serif.",
+  "fonts": {
+    "head": "Fraunces",
+    "body": "Inter"
+  },
+  "tokens": {
+    "bg": "#FAF8F3",
+    "surface": "#F2EEE5",
+    "ink": "#1F1F1F",
+    "muted": "#5F5C56",
+    "line": "#E6E0D4",
+    "accent": "#FF5A36",
+    "accent2": "#A88BEB",
+    "accentInk": "#1F1F1F",
+    "positive": "#1F7A4D",
+    "negative": "#C43A1C",
+    "cover": "#FAF8F3",
+    "coverInk": "#1F1F1F",
+    "headFont": "'Fraunces', ui-serif, Georgia, 'Times New Roman', serif",
+    "bodyFont": "'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "22px",
+    "headWeight": 600,
+    "headCase": "none",
+    "headTrack": "-0.02em",
+    "decoration": "panel"
+  },
+  "googleFonts": "family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "why-now",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "business-model",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Hearthly",
+    "oneLiner": "Home-cooked dinners from neighbours who love to cook.",
+    "lede": "We help home cooks sell meals to families on their street, safely and legally.",
+    "round": "Seed round · $1.5M",
+    "year": "2026",
+    "website": "hearthly.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "Sales grew 3.4× in six months",
+      "note": "Monthly sales, in thousands of dollars. No paid ads yet.",
+      "unit": "$k a month",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        12,
+        15,
+        19,
+        25,
+        33,
+        41
+      ],
+      "callouts": [
+        {
+          "value": "+28%",
+          "label": "average growth each month"
+        },
+        {
+          "value": "62%",
+          "label": "of families order again within 30 days"
+        }
+      ]
+    }
+  }
+}

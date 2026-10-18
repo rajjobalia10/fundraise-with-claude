@@ -1,0 +1,86 @@
+{
+  "id": "volt",
+  "name": "Volt",
+  "bestFor": "Bold consumer apps and developer tools",
+  "mood": "Graphite with an electric lime cover and a sharp grid.",
+  "fonts": {
+    "head": "Bricolage Grotesque",
+    "body": "Figtree"
+  },
+  "tokens": {
+    "bg": "#1D1D20",
+    "surface": "#27272B",
+    "ink": "#EDEDED",
+    "muted": "#A6A6B0",
+    "line": "#35353B",
+    "accent": "#FF8A3D",
+    "accent2": "#E7FF51",
+    "accentInk": "#1D1D20",
+    "positive": "#5FD3C2",
+    "negative": "#FF7B7B",
+    "cover": "linear-gradient(135deg, #E7FF51 0%, #A5E67A 45%, #41BDAC 100%)",
+    "coverInk": "#1D1D20",
+    "headFont": "'Bricolage Grotesque', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Figtree', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "20px",
+    "headWeight": 700,
+    "headCase": "none",
+    "headTrack": "-0.03em",
+    "decoration": "grid"
+  },
+  "googleFonts": "family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Stackfold",
+    "oneLiner": "Test your mobile app on 200 real phones in one click.",
+    "lede": "Developers find the bugs their users would have found, before the app goes live.",
+    "round": "Seed round · $3.5M",
+    "year": "2026",
+    "website": "stackfold.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "5,600 developers ran a test last week",
+      "note": "Weekly active developers, averaged by month, in thousands.",
+      "unit": "k developers",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        1.2,
+        1.8,
+        2.5,
+        3.3,
+        4.4,
+        5.6
+      ],
+      "callouts": [
+        {
+          "value": "94",
+          "label": "teams on a paid plan"
+        },
+        {
+          "value": "3 min",
+          "label": "average time to first test"
+        }
+      ]
+    }
+  }
+}

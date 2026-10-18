@@ -1,0 +1,87 @@
+{
+  "id": "signal",
+  "name": "Signal",
+  "bestFor": "Sales-led startups that want a punchy pitch",
+  "mood": "Black and signal red, tall uppercase titles, a dot matrix.",
+  "fonts": {
+    "head": "Oswald",
+    "body": "Source Sans 3"
+  },
+  "tokens": {
+    "bg": "#FFFFFF",
+    "surface": "#F5F5F5",
+    "ink": "#1F1F1F",
+    "muted": "#5C5C5C",
+    "line": "#E6E6E6",
+    "accent": "#D32F2F",
+    "accent2": "#E8857F",
+    "accentInk": "#FFFFFF",
+    "positive": "#2E7D32",
+    "negative": "#C62828",
+    "cover": "radial-gradient(80% 90% at 50% 40%, #2A0D0D 0%, #111111 70%)",
+    "coverInk": "#FFFFFF",
+    "headFont": "'Oswald', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Source Sans 3', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "4px",
+    "headWeight": 600,
+    "headCase": "uppercase",
+    "headTrack": "0.005em",
+    "decoration": "dots"
+  },
+  "googleFonts": "family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "business-model",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Closewell",
+    "oneLiner": "Every sales call, coached while it happens.",
+    "lede": "Closewell listens to calls and gives reps the next best question, on screen, in real time.",
+    "round": "Series A · $10M",
+    "year": "2026",
+    "website": "closewell.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "Revenue up 3× since mid-2025",
+      "note": "Annual recurring revenue, in millions of dollars, by quarter.",
+      "unit": "$M ARR",
+      "labels": [
+        "Q3 '25",
+        "Q4 '25",
+        "Q1 '26",
+        "Q2 '26",
+        "Q3 '26",
+        "Q4 '26"
+      ],
+      "values": [
+        1.1,
+        1.5,
+        1.9,
+        2.4,
+        2.9,
+        3.4
+      ],
+      "callouts": [
+        {
+          "value": "+19%",
+          "label": "more deals won by teams using it"
+        },
+        {
+          "value": "62",
+          "label": "sales teams paying"
+        }
+      ]
+    }
+  }
+}

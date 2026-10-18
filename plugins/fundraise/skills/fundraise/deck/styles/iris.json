@@ -1,0 +1,88 @@
+{
+  "id": "iris",
+  "name": "Iris",
+  "bestFor": "AI and product-led startups",
+  "mood": "Bright white with deep violet light and a crisp geometric sans.",
+  "fonts": {
+    "head": "Sora",
+    "body": "Inter"
+  },
+  "tokens": {
+    "bg": "#FFFFFF",
+    "surface": "#F8F5FC",
+    "ink": "#1F1F1F",
+    "muted": "#5F5670",
+    "line": "#ECE4F6",
+    "accent": "#6A0DAD",
+    "accent2": "#C084FC",
+    "accentInk": "#FFFFFF",
+    "positive": "#157A55",
+    "negative": "#C81E44",
+    "cover": "linear-gradient(160deg, #FFFFFF 0%, #F7F1FF 100%)",
+    "coverInk": "#1F1F1F",
+    "headFont": "'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "14px",
+    "headWeight": 600,
+    "headCase": "none",
+    "headTrack": "-0.03em",
+    "decoration": "orbs"
+  },
+  "googleFonts": "family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "why-now",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "business-model",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Pupilla",
+    "oneLiner": "Eye checks in the pharmacy, read by AI in 2 minutes.",
+    "lede": "A camera and our software spot early eye disease, so people see a doctor in time.",
+    "round": "Seed round · $3M",
+    "year": "2026",
+    "website": "pupilla.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "27,000 eye checks done in pharmacies",
+      "note": "Eye checks each month, in thousands.",
+      "unit": "k checks",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        1.4,
+        2.2,
+        3.5,
+        4.9,
+        6.8,
+        8.2
+      ],
+      "callouts": [
+        {
+          "value": "96%",
+          "label": "agree with an eye doctor's reading"
+        },
+        {
+          "value": "140",
+          "label": "pharmacies using Pupilla"
+        }
+      ]
+    }
+  }
+}

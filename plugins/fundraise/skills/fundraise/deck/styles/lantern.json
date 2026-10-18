@@ -1,0 +1,87 @@
+{
+  "id": "lantern",
+  "name": "Lantern",
+  "bestFor": "Fintech and data-heavy decks",
+  "mood": "Midnight blue, a signal-yellow accent, fine film grain.",
+  "fonts": {
+    "head": "Archivo",
+    "body": "Archivo"
+  },
+  "tokens": {
+    "bg": "#010914",
+    "surface": "#0B1627",
+    "ink": "#EFF5FF",
+    "muted": "#9AA8BD",
+    "line": "#1B2739",
+    "accent": "#F8E430",
+    "accent2": "#9CC4FF",
+    "accentInk": "#010914",
+    "positive": "#35D67A",
+    "negative": "#FF7B7B",
+    "cover": "radial-gradient(90% 80% at 80% 10%, #16335E 0%, #061426 50%, #010914 100%)",
+    "coverInk": "#EFF5FF",
+    "headFont": "'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "14px",
+    "headWeight": 700,
+    "headCase": "none",
+    "headTrack": "-0.02em",
+    "decoration": "grain"
+  },
+  "googleFonts": "family=Archivo:wght@400;500;600;700&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "business-model",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Ploverpay",
+    "oneLiner": "Savings that grow with every gig you finish.",
+    "lede": "Delivery riders and drivers set aside a little from each job, automatically.",
+    "round": "Seed round · $3M",
+    "year": "2026",
+    "website": "ploverpay.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "$6.2M saved by 21,000 workers",
+      "note": "Money held in Ploverpay savings at month end, in millions of dollars.",
+      "unit": "$M saved",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        1.1,
+        1.9,
+        2.7,
+        3.6,
+        4.8,
+        6.2
+      ],
+      "callouts": [
+        {
+          "value": "71%",
+          "label": "still saving after 90 days"
+        },
+        {
+          "value": "$0",
+          "label": "spent on ads so far"
+        }
+      ]
+    }
+  }
+}

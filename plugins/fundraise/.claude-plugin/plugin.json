@@ -1,0 +1,14 @@
+{
+  "name": "fundraise",
+  "displayName": "Fundraise with Claude",
+  "version": "1.0.0",
+  "description": "Claude finds investors, writes personal LinkedIn notes, fills accelerator forms with you and makes your pitch deck. Runs in your own Claude. No API key, no cost.",
+  "author": {
+    "name": "Rivesa Inc.",
+    "url": "https://fundingcalendar.com"
+  },
+  "homepage": "https://github.com/rajjobalia10/fundraise-with-claude",
+  "repository": "https://github.com/rajjobalia10/fundraise-with-claude",
+  "license": "MIT",
+  "keywords": ["fundraising", "startup", "investors", "accelerator", "pitch-deck", "linkedin"]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "granite",
+  "name": "Granite",
+  "bestFor": "Fintech, infrastructure and serious B2B",
+  "mood": "Charcoal and steel blue, an engineered serif, a fine grid.",
+  "fonts": {
+    "head": "IBM Plex Serif",
+    "body": "IBM Plex Sans"
+  },
+  "tokens": {
+    "bg": "#FFFFFF",
+    "surface": "#F5F6F7",
+    "ink": "#111418",
+    "muted": "#59606B",
+    "line": "#E2E5E9",
+    "accent": "#0F5D9C",
+    "accent2": "#3F8FD2",
+    "accentInk": "#FFFFFF",
+    "positive": "#1A7A45",
+    "negative": "#C0392F",
+    "cover": "linear-gradient(165deg, #1A1F26 0%, #0D1014 100%)",
+    "coverInk": "#F2F4F6",
+    "headFont": "'IBM Plex Serif', ui-serif, Georgia, 'Times New Roman', serif",
+    "bodyFont": "'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "6px",
+    "headWeight": 500,
+    "headCase": "none",
+    "headTrack": "-0.015em",
+    "decoration": "grid"
+  },
+  "googleFonts": "family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "business-model",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Keelstone",
+    "oneLiner": "Factories get paid in 2 days, not 90.",
+    "lede": "We pay suppliers early on their invoices from big buyers, and the buyer pays us later.",
+    "round": "Series A · $12M",
+    "year": "2026",
+    "website": "keelstone.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "$94M of invoices paid early this year",
+      "note": "Value of invoices we funded each quarter, in millions of dollars.",
+      "unit": "$M funded",
+      "labels": [
+        "Q3 '25",
+        "Q4 '25",
+        "Q1 '26",
+        "Q2 '26",
+        "Q3 '26",
+        "Q4 '26"
+      ],
+      "values": [
+        6,
+        9,
+        14,
+        19,
+        26,
+        35
+      ],
+      "callouts": [
+        {
+          "value": "0.4%",
+          "label": "of funded invoices paid late"
+        },
+        {
+          "value": "57",
+          "label": "large buyers connected"
+        }
+      ]
+    }
+  }
+}

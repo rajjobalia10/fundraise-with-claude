@@ -1,0 +1,655 @@
+<!doctype html>
+<!--
+  ============================================================================================
+  PITCH DECK TEMPLATE: HOW TO FILL IT (instructions for Claude)
+  ============================================================================================
+  This file is one complete pitch deck. It opens in any browser with no edits: style "Ember"
+  with sample copy for a made-up startup called Hearthly. To make a founder's deck:
+
+  1. PICK A STYLE. Open styles/index.json, let the founder choose one of the 20 looks
+     (gallery.html shows them all), then open styles/<id>.json.
+
+  2. PASTE THE TOKENS into the :root block below (marked "STYLE TOKENS").
+     Each token name maps to one CSS variable, camelCase to kebab-case:
+       bg -> --bg            surface -> --surface      ink -> --ink        muted -> --muted
+       line -> --line        accent -> --accent        accent2 -> --accent2
+       accentInk -> --accent-ink   positive -> --positive   negative -> --negative
+       cover -> --cover      coverInk -> --cover-ink
+       headFont -> --head-font     bodyFont -> --body-font  radius -> --radius
+       headWeight -> --head-weight headCase -> --head-case  headTrack -> --head-track
+     The values in the JSON are already valid CSS. Copy them exactly.
+
+  3. SET THE DECORATION: put the style's "decoration" value in data-deco on the <html> tag
+     (one of: panel, dots, wave, rings, grid, rays, grain, orbs, hill, band).
+
+  4. SET THE FONTS: replace the href of <link id="google-fonts"> with
+       https://fonts.googleapis.com/css2?<the style's "googleFonts" value>
+     That link is the only file this deck loads from another site. Add nothing else.
+
+  5. WRITE THE SLIDES. Every slide is one <section class="slide" data-section="...">.
+     Follow the style's "slideOrder". Each section name uses one layout below:
+       cover          -> layout "title"      (class "slide cover")
+       problem        -> layout "statement"  (one big number + one sentence + 3 facts)
+       solution       -> layout "bullets"    (headline + 3 numbered points)
+       why-now        -> layout "statement"
+       product        -> layout "cards"      (3 cards; add class "four" to the grid for 4)
+       traction       -> layout "kpis"       (4 numbers; 3 also works)
+       growth         -> layout "chart"      (bar chart, inline SVG)
+       market         -> layout "kpis"       (3 numbers: who could buy, who we can reach, first goal)
+       business-model -> layout "cards"      (4 cards)
+       competition    -> layout "table"
+       team           -> layout "team"       (photos optional; initials show when there is no photo)
+       raise          -> layout "raise"      (amount + use-of-funds bars)
+       contact        -> layout "closing"    (class "slide cover closing")
+     Copy a slide block to add one, delete a block to drop one. Keep the order the founder wants.
+     The slide number in each footer counts itself. Put the company name in every footer.
+
+  6. KEEP TEXT SHORT. A headline is one line, at most two. Body text is 1 to 2 short sentences.
+     Bullets: 3, never more than 5. Cards: 3 or 4, each 2 lines at most. Numbers beat adjectives.
+     Use ONLY facts the founder gave you. Never invent numbers. Mark anything unsure as [CHECK].
+     Delete the "Sample" tag on the cover and on the closing slide.
+
+  7. THE BAR CHART is plain SVG (viewBox 0 0 600 440). For N bars:
+       slot = 600 / N, bar width = slot x 0.56, x = i x slot + (slot - width) / 2
+       height = value / biggest value x 320, y = 390 - height
+       value label: x = bar centre, y = y - 12.   month label: x = bar centre, y = 420.
+       Gridlines stay at y = 70, 150, 230, 310 and the base line at y = 390.
+     Give the last (or most important) bar class "bar hi".
+
+  8. USE OF FUNDS: each bar is <i style="width:40%">. The widths should add up to 100%.
+
+  9. TEAM PHOTOS: to use a photo, replace <span class="avatar">MM</span> with
+     <img class="avatar" src="photo.jpg" alt="Maya Mensah">. Without one, write the initials.
+
+  10. TO SHARE AS PDF: open the file in Chrome, press Cmd/Ctrl + P, choose "Save as PDF".
+      Each slide prints on its own page. Present with the arrow keys or by clicking.
+
+  data-k="..." attributes only help our preview script fill sample text. They do no harm;
+  you can leave or remove them.
+  ============================================================================================
+-->
+<html lang="en" data-deco="panel">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearthly · Seed deck (Sample)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="google-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* ---------------- STYLE TOKENS: paste the chosen style here ---------------- */
+:root {
+  --bg: #FAF8F3;
+  --surface: #F2EEE5;
+  --ink: #1F1F1F;
+  --muted: #5F5C56;
+  --line: #E6E0D4;
+  --accent: #FF5A36;
+  --accent2: #A88BEB;
+  --accent-ink: #1F1F1F;
+  --positive: #1F7A4D;
+  --negative: #C43A1C;
+  --cover: #FAF8F3;
+  --cover-ink: #1F1F1F;
+  --head-font: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+  --body-font: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --radius: 22px;
+  --head-weight: 600;
+  --head-case: none;
+  --head-track: -0.02em;
+}
+/* ---------------- end of style tokens (nothing below needs to change) ---------------- */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { background: #161618; overflow: hidden; font-family: var(--body-font); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.deck { position: fixed; inset: 0; counter-reset: n; }
+
+/* Every slide is a 1280 x 720 canvas, scaled to fit the window. */
+.slide {
+  position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; margin: -360px 0 0 -640px;
+  transform: scale(var(--fit, 1)); visibility: hidden;
+  display: flex; flex-direction: column; padding: 64px 80px 84px; overflow: hidden;
+  background: var(--bg); color: var(--ink); counter-increment: n;
+}
+.slide.on { visibility: visible; }
+.slide > * { position: relative; z-index: 2; }
+
+h1, h2, h3, .big, .kpi b, .amount, .avatar, .mark {
+  font-family: var(--head-font); font-weight: var(--head-weight);
+  text-transform: var(--head-case); letter-spacing: var(--head-track);
+}
+h2 { font-size: 46px; line-height: 1.08; max-width: 1000px; }
+h3 { font-size: 22px; line-height: 1.2; }
+p { font-size: 20px; line-height: 1.45; }
+.muted { color: var(--muted); }
+.eyebrow {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+}
+.eyebrow::before { content: ""; width: 28px; height: 4px; border-radius: 2px; background: var(--accent); }
+.lead { margin-top: 18px; max-width: 820px; color: var(--muted); }
+.foot {
+  position: absolute; left: 80px; right: 80px; bottom: 34px; z-index: 2;
+  display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); letter-spacing: .02em;
+}
+.foot::after { content: counter(n, decimal-leading-zero); font-variant-numeric: tabular-nums; }
+.grow { flex: 1; min-height: 0; }
+
+/* ---------- title / cover and closing ---------- */
+.cover { background: var(--cover); color: var(--cover-ink); justify-content: space-between; padding: 64px 80px; }
+.brand { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 600; }
+.mark {
+  width: 46px; height: 46px; display: grid; place-items: center; font-size: 24px; line-height: 1;
+  border: 2px solid currentColor; border-radius: calc(var(--radius) * .55);
+}
+.cover h1 { font-size: 76px; line-height: 1.02; max-width: 720px; }
+.cover .lede { font-size: 24px; line-height: 1.4; max-width: 620px; margin-top: 26px; }
+.meta { display: flex; align-items: center; gap: 28px; font-size: 17px; font-weight: 500; }
+.tag { border: 1.5px solid currentColor; border-radius: 999px; padding: 5px 14px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.closing h1 { font-size: 72px; max-width: 760px; }
+.contact { display: grid; gap: 10px; font-size: 22px; margin-top: 30px; max-width: 640px; }
+.contact b { font-weight: 600; }
+
+/* ---------- statement (problem, why now) ---------- */
+.statement { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.big { font-size: 150px; line-height: .92; color: var(--ink); }
+.big small { display: block; font-size: 22px; letter-spacing: 0; margin-top: 18px; font-family: var(--body-font); font-weight: 500; text-transform: none; color: var(--muted); }
+.statement p.say { font-size: 30px; line-height: 1.3; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); }
+.facts b { display: block; font-size: 28px; font-family: var(--head-font); font-weight: var(--head-weight); letter-spacing: var(--head-track); margin-bottom: 4px; }
+.facts span { font-size: 16px; line-height: 1.4; color: var(--muted); }
+.quote { font-family: var(--head-font); font-weight: var(--head-weight); letter-spacing: var(--head-track); text-transform: var(--head-case); font-size: 54px; line-height: 1.1; max-width: 1040px; }
+.quote::before { content: ""; display: block; width: 72px; height: 6px; border-radius: 3px; background: var(--accent); margin-bottom: 34px; }
+
+/* ---------- bullets ---------- */
+.bullets { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: center; flex: 1; }
+.bullets ol { list-style: none; display: grid; gap: 26px; }
+.bullets li { display: grid; grid-template-columns: 52px 1fr; gap: 20px; align-items: start; font-size: 22px; line-height: 1.4; }
+.bullets li::before {
+  counter-increment: b; content: counter(b); width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 18px;
+}
+.bullets ol { counter-reset: b; }
+.bullets li b { display: block; font-weight: 600; }
+.bullets li span { color: var(--muted); font-size: 19px; }
+
+/* ---------- cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: auto 0; }
+.cards.four { grid-template-columns: repeat(4, 1fr); }
+.card { background: var(--surface); border-radius: var(--radius); padding: 30px 28px 32px; border-top: 4px solid var(--accent); min-height: 270px; display: flex; flex-direction: column; }
+.card .num { font-size: 15px; font-weight: 600; letter-spacing: .1em; color: var(--muted); margin-bottom: auto; padding-bottom: 28px; }
+.card h3 { margin-bottom: 10px; }
+.card p { font-size: 17px; color: var(--muted); }
+.cards.four .card h3 { font-size: 54px; line-height: 1; font-family: var(--head-font); margin-bottom: 14px; }
+
+/* ---------- KPI row ---------- */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: auto; margin-bottom: auto; }
+.kpis.three { grid-template-columns: repeat(3, 1fr); }
+.kpi { background: var(--surface); border-radius: var(--radius); padding: 30px 28px; display: flex; flex-direction: column; gap: 10px; min-height: 230px; }
+.kpi b { font-size: 60px; line-height: 1; margin-bottom: auto; }
+.kpis.three .kpi b { font-size: 64px; }
+.kpi span { font-size: 17px; line-height: 1.35; color: var(--muted); }
+.kpi em { font-style: normal; font-size: 15px; font-weight: 600; color: var(--positive); }
+.kpi::before { content: ""; width: 36px; height: 4px; border-radius: 2px; background: var(--accent); margin-bottom: 18px; }
+
+/* ---------- bar chart ---------- */
+.chart-wrap { display: grid; grid-template-columns: 380px 1fr; gap: 48px; flex: 1; min-height: 0; }
+.chart-wrap h2 { font-size: 42px; }
+.callouts { display: grid; gap: 22px; margin-top: 34px; }
+.callouts div { border-left: 4px solid var(--accent); padding-left: 18px; }
+.callouts b { display: block; font-family: var(--head-font); font-weight: var(--head-weight); letter-spacing: var(--head-track); font-size: 34px; line-height: 1.1; }
+.callouts span { font-size: 16px; color: var(--muted); }
+.panel { background: var(--surface); border-radius: var(--radius); padding: 26px 30px 18px; display: flex; flex-direction: column; }
+.panel .unit { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.chart { width: 100%; flex: 1; min-height: 0; }
+.chart .gl { stroke: var(--line); stroke-width: 1; }
+.chart .base { stroke: var(--muted); stroke-width: 1.5; }
+.chart .bar { fill: color-mix(in srgb, var(--accent2) 65%, var(--surface)); }
+.chart .bar.hi { fill: var(--accent); }
+.chart text { font-family: var(--body-font); fill: var(--muted); font-size: 15px; text-anchor: middle; }
+.chart text.v { fill: var(--ink); font-weight: 600; font-size: 17px; }
+
+/* ---------- table ---------- */
+table { width: 100%; border-collapse: collapse; margin-top: 36px; font-size: 19px; }
+th, td { text-align: center; padding: 17px 16px; border-bottom: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+thead th { font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+thead th.us { color: var(--ink); }
+td.us, th.us { background: var(--surface); }
+thead th.us { border-radius: var(--radius) var(--radius) 0 0; border-top: 4px solid var(--accent); }
+.yes::before { content: "✓"; color: var(--positive); font-weight: 700; font-size: 22px; }
+.no::before { content: "–"; color: var(--muted); font-size: 22px; }
+
+/* ---------- team ---------- */
+.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: auto; margin-bottom: auto; }
+.person { background: var(--surface); border-radius: var(--radius); padding: 30px; }
+.avatar { width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center; object-fit: cover; background: var(--accent); color: var(--accent-ink); font-size: 32px; margin-bottom: 26px; }
+.person h3 { margin-bottom: 4px; }
+.person .role { font-size: 16px; font-weight: 600; color: var(--muted); margin-bottom: 14px; }
+.person p { font-size: 17px; color: var(--muted); }
+
+/* ---------- the raise ---------- */
+.raise { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; flex: 1; align-items: center; }
+.amount { font-size: 150px; line-height: .9; }
+.raise .sub { font-size: 24px; margin-top: 18px; }
+.raise .goal { font-size: 18px; color: var(--muted); margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); max-width: 460px; }
+.funds { display: grid; gap: 24px; }
+.funds h3 { font-size: 15px; font-family: var(--body-font); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.fund { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; font-size: 19px; }
+.fund b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.track { grid-column: 1 / -1; height: 14px; border-radius: 7px; background: var(--surface); overflow: hidden; }
+.track i { display: block; height: 100%; border-radius: 7px; background: var(--accent); }
+.fund:nth-child(3) .track i { background: color-mix(in srgb, var(--accent) 78%, var(--bg)); }
+.fund:nth-child(4) .track i { background: color-mix(in srgb, var(--accent) 58%, var(--bg)); }
+.fund:nth-child(n+5) .track i { background: color-mix(in srgb, var(--accent) 42%, var(--bg)); }
+
+/* ================= decorations: pure CSS, drawn on cover and closing slides ================= */
+.deco { position: absolute !important; inset: 0; z-index: 1 !important; pointer-events: none; overflow: hidden; }
+.deco::before, .deco::after { content: ""; position: absolute; }
+
+/* panel: a tall gradient panel on the right */
+[data-deco="panel"] .deco::before {
+  top: 44px; right: 44px; bottom: 44px; width: 392px; border-radius: calc(var(--radius) * 1.4);
+  background:
+    radial-gradient(55% 40% at 28% 22%, color-mix(in srgb, #fff 70%, transparent), transparent 70%),
+    radial-gradient(80% 55% at 80% 95%, var(--accent), transparent 72%),
+    linear-gradient(172deg, color-mix(in srgb, var(--accent2) 55%, #fff) 0%, var(--accent2) 38%, var(--accent) 100%);
+}
+[data-deco="panel"] .deco::after {
+  top: 44px; right: 44px; bottom: 44px; width: 392px; border-radius: calc(var(--radius) * 1.4);
+  background: repeating-linear-gradient(90deg, color-mix(in srgb, #fff 16%, transparent) 0 1px, transparent 1px 48px);
+}
+
+/* dots: a dot matrix fading out from the top right */
+[data-deco="dots"] .deco::before {
+  right: -40px; top: -40px; width: 700px; height: 800px;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--cover-ink) 40%, transparent) 2.4px, transparent 2.9px);
+  background-size: 30px 30px;
+  -webkit-mask-image: radial-gradient(60% 55% at 72% 34%, #000 25%, transparent 100%);
+  mask-image: radial-gradient(60% 55% at 72% 34%, #000 25%, transparent 100%);
+}
+[data-deco="dots"] .deco::after {
+  right: 150px; top: 150px; width: 260px; height: 260px; border-radius: 50%;
+  background-image: radial-gradient(circle, var(--accent2) 5px, transparent 5.6px);
+  background-size: 30px 30px; background-position: 0 0;
+  -webkit-mask-image: radial-gradient(circle, #000 45%, transparent 71%);
+  mask-image: radial-gradient(circle, #000 45%, transparent 71%);
+}
+
+/* wave: layered waves along the bottom right */
+[data-deco="wave"] .deco::before, [data-deco="wave"] .deco::after {
+  left: 360px; right: 0; bottom: 0; height: 330px;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 920 330' preserveAspectRatio='none'%3E%3Cpath d='M0 330 C160 300 230 190 400 200 C560 210 620 90 760 70 C840 58 890 20 920 0 L920 330 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 920 330' preserveAspectRatio='none'%3E%3Cpath d='M0 330 C160 300 230 190 400 200 C560 210 620 90 760 70 C840 58 890 20 920 0 L920 330 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+[data-deco="wave"] .deco::before { background: linear-gradient(100deg, color-mix(in srgb, var(--accent2) 85%, transparent), var(--accent2)); opacity: .55; }
+[data-deco="wave"] .deco::after { left: 560px; height: 230px; background: linear-gradient(100deg, color-mix(in srgb, var(--accent) 80%, transparent), var(--accent)); }
+
+/* rings: concentric orbit rings on the right */
+[data-deco="rings"] .deco::before {
+  right: -420px; top: -170px; width: 1000px; height: 1000px; border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 62px, color-mix(in srgb, var(--accent2) 60%, transparent) 63px 64.5px, transparent 65.5px 66px);
+  -webkit-mask-image: radial-gradient(circle, #000 35%, transparent 70%);
+  mask-image: radial-gradient(circle, #000 35%, transparent 70%);
+}
+[data-deco="rings"] .deco::after {
+  right: 42px; top: 292px; width: 76px; height: 76px; border-radius: 50%;
+  background: var(--accent2); box-shadow: 0 0 60px color-mix(in srgb, var(--accent2) 70%, transparent);
+}
+
+/* grid: a fine line grid with one filled square */
+[data-deco="grid"] .deco::before {
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--cover-ink) 16%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--cover-ink) 16%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px; background-position: -1px -1px;
+  -webkit-mask-image: linear-gradient(100deg, transparent 38%, #000 78%);
+  mask-image: linear-gradient(100deg, transparent 38%, #000 78%);
+}
+[data-deco="grid"] .deco::after {
+  left: 1023px; top: 191px; width: 129px; height: 129px; background: var(--accent);
+  box-shadow: -128px 128px 0 -0px color-mix(in srgb, var(--cover-ink) 14%, transparent);
+}
+
+/* rays: soft beams of light from the top right */
+[data-deco="rays"] .deco::before {
+  inset: 0;
+  background: conic-gradient(from 198deg at 88% -12%,
+    transparent 0deg, color-mix(in srgb, var(--accent2) 55%, transparent) 6deg, transparent 13deg,
+    transparent 19deg, color-mix(in srgb, var(--cover-ink) 14%, transparent) 24deg, transparent 30deg,
+    transparent 37deg, color-mix(in srgb, var(--accent) 45%, transparent) 42deg, transparent 49deg,
+    transparent 56deg, color-mix(in srgb, var(--cover-ink) 10%, transparent) 60deg, transparent 66deg, transparent 360deg);
+  filter: blur(6px);
+  -webkit-mask-image: linear-gradient(110deg, transparent 30%, #000 70%);
+  mask-image: linear-gradient(110deg, transparent 30%, #000 70%);
+}
+[data-deco="rays"] .deco::after {
+  right: 40px; top: -120px; width: 460px; height: 360px; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent2) 45%, transparent), transparent);
+}
+
+/* grain: film grain over a warm glow */
+[data-deco="grain"] .deco::before {
+  inset: 0; opacity: .32; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.6 -.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-deco="grain"] .deco::after {
+  right: -160px; top: -200px; width: 820px; height: 820px; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 38%, transparent), color-mix(in srgb, var(--accent2) 14%, transparent) 55%, transparent);
+}
+
+/* orbs: two big blurred glowing circles */
+[data-deco="orbs"] .deco::before {
+  right: -60px; top: -110px; width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, var(--accent2), color-mix(in srgb, var(--accent2) 0%, transparent) 70%);
+  filter: blur(18px); opacity: .9;
+}
+[data-deco="orbs"] .deco::after {
+  right: 230px; bottom: -190px; width: 470px; height: 470px; border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, var(--accent), color-mix(in srgb, var(--accent) 0%, transparent) 70%);
+  filter: blur(22px); opacity: .75;
+}
+
+/* hill: a sun over a rounded hill */
+[data-deco="hill"] .deco::before {
+  right: 150px; top: 120px; width: 230px; height: 230px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 90px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+[data-deco="hill"] .deco::after {
+  left: 560px; right: -260px; bottom: -560px; height: 860px; border-radius: 50%;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent2) 70%, var(--cover-ink)) 0%, var(--accent2) 40%);
+  box-shadow: -220px 120px 0 -40px color-mix(in srgb, var(--accent2) 55%, transparent);
+}
+
+/* band: a solid edge band and a striped block */
+[data-deco="band"] .deco::before { left: 0; top: 0; bottom: 0; width: 26px; background: var(--accent); }
+[data-deco="band"] .deco::after {
+  right: 0; top: 0; bottom: 0; width: 330px;
+  background:
+    repeating-linear-gradient(-45deg, var(--accent) 0 22px, transparent 22px 44px) right 0 bottom 0 / 330px 140px no-repeat,
+    color-mix(in srgb, var(--cover-ink) 7%, transparent);
+}
+
+/* Small echoes of some decorations on content slides */
+[data-deco="band"] .slide:not(.cover)::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: var(--accent); }
+[data-deco="dots"] .slide:not(.cover)::before {
+  content: ""; position: absolute; right: 40px; top: 36px; width: 150px; height: 90px;
+  background-image: radial-gradient(circle, var(--line) 2.4px, transparent 2.9px); background-size: 18px 18px;
+}
+[data-deco="grid"] .slide:not(.cover)::before {
+  content: ""; position: absolute; right: 0; top: 0; width: 380px; height: 260px;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: linear-gradient(225deg, #000, transparent 70%); mask-image: linear-gradient(225deg, #000, transparent 70%);
+}
+[data-deco="rings"] .slide:not(.cover)::before {
+  content: ""; position: absolute; right: -120px; top: -120px; width: 300px; height: 300px; border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 30px, var(--line) 31px 32px, transparent 33px 34px);
+}
+
+/* ---------- on-screen controls (never printed) ---------- */
+.ui { position: fixed; z-index: 10; font: 500 13px/1 ui-sans-serif, system-ui, sans-serif; color: #e8e8e8; background: rgba(0,0,0,.55); border-radius: 999px; padding: 8px 14px; }
+#counter { right: 16px; bottom: 16px; font-variant-numeric: tabular-nums; }
+#tip { left: 50%; bottom: 16px; transform: translateX(-50%); transition: opacity .6s; white-space: nowrap; }
+#tip.gone { opacity: 0; }
+.clean .ui { display: none; }
+
+@page { size: 1280px 720px; margin: 0; }
+@media print {
+  html, body { height: auto; overflow: visible; background: none; }
+  .deck { position: static; }
+  .slide { position: relative; left: auto; top: auto; margin: 0; transform: none; visibility: visible; break-after: page; page-break-after: always; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .ui { display: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<main class="deck">
+
+<!-- 1 · cover · layout "title" -->
+<section class="slide cover" data-section="cover">
+  <div class="deco"></div>
+  <div class="brand"><span class="mark" data-k="initial">H</span><span data-k="company">Hearthly</span></div>
+  <div>
+    <h1 data-k="oneLiner">Home-cooked dinners from neighbours who love to cook.</h1>
+    <p class="lede" data-k="lede">We help home cooks sell meals to families on their street, safely and legally.</p>
+  </div>
+  <div class="meta"><span data-k="round">Seed round · $1.5M</span><span data-k="year">2026</span><span class="tag" data-k="label">Sample</span></div>
+</section>
+
+<!-- 2 · problem · layout "statement" -->
+<section class="slide" data-section="problem">
+  <div class="eyebrow">The problem</div>
+  <div class="statement grow">
+    <div class="big">6 in 10<small>working parents</small></div>
+    <p class="say">say dinner is the most stressful part of their day. Takeaway costs too much. Meal kits still take an hour.</p>
+  </div>
+  <div class="facts">
+    <div><b>$38</b><span>average family takeaway order</span></div>
+    <div><b>52 min</b><span>a day spent shopping and cooking</span></div>
+    <div><b>1 in 4</b><span>families skip a home-cooked meal most nights</span></div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 3 · solution · layout "bullets" -->
+<section class="slide" data-section="solution">
+  <div class="eyebrow">Our solution</div>
+  <div class="bullets">
+    <h2>Hearthly turns a neighbour's kitchen into your family's favourite dinner.</h2>
+    <ol>
+      <li><div><b>Order by 2pm, eat by 6pm</b><span>Pick up on the way home or get it delivered.</span></div></li>
+      <li><div><b>Every cook is checked</b><span>Food-safety training, a kitchen visit and a licence.</span></div></li>
+      <li><div><b>About $9 a plate</b><span>Less than takeaway, and real home cooking.</span></div></li>
+    </ol>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 4 · why-now · layout "statement" (quote form) -->
+<section class="slide" data-section="why-now">
+  <div class="eyebrow">Why now</div>
+  <div class="grow" style="display:flex;flex-direction:column;justify-content:center">
+    <p class="quote">New home-kitchen laws let neighbours sell meals they cook at home.</p>
+    <p class="lead">Selling home-cooked food used to need a commercial kitchen. Most families and cooks still do not know it changed.</p>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 5 · product · layout "cards" (3) -->
+<section class="slide" data-section="product">
+  <div class="eyebrow">How it works</div>
+  <h2>Three steps, one hot dinner.</h2>
+  <div class="cards">
+    <div class="card"><div class="num">01</div><h3>Cooks post tonight's menu</h3><p>Each cook makes one dish, in batches of 10 to 30 plates.</p></div>
+    <div class="card"><div class="num">02</div><h3>Families order in the app</h3><p>They see the cook, the kitchen check and the reviews.</p></div>
+    <div class="card"><div class="num">03</div><h3>We handle the rest</h3><p>Payments, food-safety checks, packaging and delivery.</p></div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 6 · traction · layout "kpis" (4) -->
+<section class="slide" data-section="traction">
+  <div class="eyebrow">Traction</div>
+  <h2>Families come back, week after week.</h2>
+  <div class="kpis">
+    <div class="kpi"><b>$41k</b><span>sales in September</span><em>+28% a month</em></div>
+    <div class="kpi"><b>1,900</b><span>families have ordered</span></div>
+    <div class="kpi"><b>62%</b><span>order again within 30 days</span></div>
+    <div class="kpi"><b>140</b><span>home cooks selling</span></div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 7 · growth · layout "chart" (inline SVG; see step 7 in the notes at the top) -->
+<section class="slide" data-section="growth">
+  <div class="chart-wrap">
+    <div>
+      <div class="eyebrow" data-k="growth.eyebrow">Traction</div>
+      <h2 data-k="growth.title">Sales grew 3.4× in six months</h2>
+      <p class="lead" style="font-size:18px" data-k="growth.note">Monthly sales, in thousands of dollars. No paid ads yet.</p>
+      <div class="callouts">
+        <div><b data-k="growth.callouts.0.value">+28%</b><span data-k="growth.callouts.0.label">average growth each month</span></div>
+        <div><b data-k="growth.callouts.1.value">62%</b><span data-k="growth.callouts.1.label">of families order again within 30 days</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="unit" data-k="growth.unit">$k a month</div>
+      <svg class="chart" data-k="growth.chart" viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Monthly sales from April to September">
+        <line class="gl" x1="0" x2="600" y1="70" y2="70"/><line class="gl" x1="0" x2="600" y1="150" y2="150"/><line class="gl" x1="0" x2="600" y1="230" y2="230"/><line class="gl" x1="0" x2="600" y1="310" y2="310"/><line class="base" x1="0" x2="600" y1="390" y2="390"/>
+        <rect class="bar" x="22" y="296.3" width="56" height="93.7" rx="6"/><text class="v" x="50" y="284.3">12</text><text x="50" y="420">Apr</text>
+        <rect class="bar" x="122" y="272.9" width="56" height="117.1" rx="6"/><text class="v" x="150" y="260.9">15</text><text x="150" y="420">May</text>
+        <rect class="bar" x="222" y="241.7" width="56" height="148.3" rx="6"/><text class="v" x="250" y="229.7">19</text><text x="250" y="420">Jun</text>
+        <rect class="bar" x="322" y="194.9" width="56" height="195.1" rx="6"/><text class="v" x="350" y="182.9">25</text><text x="350" y="420">Jul</text>
+        <rect class="bar" x="422" y="132.4" width="56" height="257.6" rx="6"/><text class="v" x="450" y="120.4">33</text><text x="450" y="420">Aug</text>
+        <rect class="bar hi" x="522" y="70" width="56" height="320" rx="6"/><text class="v" x="550" y="58">41</text><text x="550" y="420">Sep</text>
+      </svg>
+    </div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 8 · market · layout "kpis" (3) -->
+<section class="slide" data-section="market">
+  <div class="eyebrow">The market</div>
+  <h2>Families spend billions on dinners they did not cook.</h2>
+  <div class="kpis three">
+    <div class="kpi"><b>$27B</b><span>Everyone who could buy: US families' yearly takeaway dinners</span></div>
+    <div class="kpi"><b>$4.1B</b><span>Who we can reach: the 12 cities we plan to open in by 2029</span></div>
+    <div class="kpi"><b>$120M</b><span>Our first goal: a 3% share of those 12 cities</span></div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 9 · business-model · layout "cards" (4) -->
+<section class="slide" data-section="business-model">
+  <div class="eyebrow">How we make money</div>
+  <h2>We keep 18% of every order.</h2>
+  <div class="cards four">
+    <div class="card"><div class="num">AVERAGE ORDER</div><h3>$27</h3><p>Three plates, most often</p></div>
+    <div class="card"><div class="num">WE KEEP</div><h3>18%</h3><p>The cook keeps the rest</p></div>
+    <div class="card"><div class="num">COST TO WIN A FAMILY</div><h3>$14</h3><p>Mostly from word of mouth</p></div>
+    <div class="card"><div class="num">GROSS MARGIN</div><h3>61%</h3><p>After payments and packaging</p></div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 10 · competition · layout "table" -->
+<section class="slide" data-section="competition">
+  <div class="eyebrow">Competition</div>
+  <h2>The only real home cooking you don't have to make.</h2>
+  <table>
+    <thead><tr><th></th><th class="us">Hearthly</th><th>Takeaway apps</th><th>Meal kits</th><th>Cook it yourself</th></tr></thead>
+    <tbody>
+      <tr><td>Real home cooking</td><td class="us yes"></td><td class="no"></td><td class="yes"></td><td class="yes"></td></tr>
+      <tr><td>Ready by 6pm, no effort</td><td class="us yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td></tr>
+      <tr><td>Under $10 a plate</td><td class="us yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr>
+      <tr><td>Local cooks earn money</td><td class="us yes"></td><td class="no"></td><td class="no"></td><td class="no"></td></tr>
+    </tbody>
+  </table>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 11 · team · layout "team" -->
+<section class="slide" data-section="team">
+  <div class="eyebrow">The team</div>
+  <h2>We have run kitchens, apps and food safety.</h2>
+  <div class="team">
+    <div class="person"><span class="avatar">MM</span><h3>Maya Mensah</h3><div class="role">Co-founder, CEO</div><p>Ran operations for a 300-store grocery chain.</p></div>
+    <div class="person"><span class="avatar">DR</span><h3>Daniel Reyes</h3><div class="role">Co-founder, CTO</div><p>Built the ordering app at a food delivery start-up.</p></div>
+    <div class="person"><span class="avatar">LR</span><h3>Leena Rao</h3><div class="role">Head of Cooks</div><p>Trained 2,000 food handlers for the city.</p></div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 12 · raise · layout "raise" (use-of-funds widths add up to 100%) -->
+<section class="slide" data-section="raise">
+  <div class="eyebrow">The raise</div>
+  <div class="raise">
+    <div>
+      <div class="amount">$1.5M</div>
+      <p class="sub">Seed round · 18 months of runway</p>
+      <p class="goal">By the end of 2027: $250k monthly sales in 6 cities, ready for a Series A.</p>
+    </div>
+    <div class="funds">
+      <h3>Where the money goes</h3>
+      <div class="fund"><span>Open 5 new cities</span><b>40%</b><div class="track"><i style="width:40%"></i></div></div>
+      <div class="fund"><span>Product and the app</span><b>30%</b><div class="track"><i style="width:30%"></i></div></div>
+      <div class="fund"><span>Cook safety and training</span><b>20%</b><div class="track"><i style="width:20%"></i></div></div>
+      <div class="fund"><span>Running costs</span><b>10%</b><div class="track"><i style="width:10%"></i></div></div>
+    </div>
+  </div>
+  <footer class="foot"><span data-k="company">Hearthly</span></footer>
+</section>
+
+<!-- 13 · contact · layout "closing" -->
+<section class="slide cover closing" data-section="contact">
+  <div class="deco"></div>
+  <div class="brand"><span class="mark" data-k="initial">H</span><span data-k="company">Hearthly</span></div>
+  <div>
+    <h1>Dinner, sorted by the neighbourhood.</h1>
+    <div class="contact">
+      <span><b>Maya Mensah</b>, Co-founder and CEO</span>
+      <span data-k="website">hearthly.example</span>
+    </div>
+  </div>
+  <div class="meta"><span data-k="round">Seed round · $1.5M</span><span class="tag" data-k="label">Sample</span></div>
+</section>
+
+</main>
+
+<div id="tip" class="ui">← → or click to move · Print → Save as PDF</div>
+<div id="counter" class="ui">1 / 13</div>
+
+<script>
+/* Navigation only: arrow keys, click, swipe, slide counter, #3 links to slide 3. */
+(function () {
+  var root = document.documentElement;
+  if (/[?&]clean\b/.test(location.search)) root.classList.add("clean");
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var counter = document.getElementById("counter");
+  var tip = document.getElementById("tip");
+  var i = 0;
+  function fit() { root.style.setProperty("--fit", Math.min(innerWidth / 1280, innerHeight / 720)); }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (s, k) { s.classList.toggle("on", k === i); });
+    counter.textContent = (i + 1) + " / " + slides.length;
+    try { history.replaceState(null, "", "#" + (i + 1)); } catch (e) {}
+  }
+  function fromHash() { var n = parseInt(location.hash.slice(1), 10); show(isNaN(n) ? 0 : n - 1); }
+  function hideTip() { tip.classList.add("gone"); }
+  addEventListener("resize", fit);
+  addEventListener("hashchange", fromHash);
+  addEventListener("keydown", function (e) {
+    var k = e.key;
+    if (k === "ArrowRight" || k === "ArrowDown" || k === "PageDown" || k === " " || k === "Enter") { show(i + 1); e.preventDefault(); }
+    else if (k === "ArrowLeft" || k === "ArrowUp" || k === "PageUp" || k === "Backspace") { show(i - 1); e.preventDefault(); }
+    else if (k === "Home") show(0);
+    else if (k === "End") show(slides.length - 1);
+    hideTip();
+  });
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    show(e.clientX < innerWidth / 3 ? i - 1 : i + 1);
+    hideTip();
+  });
+  var x0 = null;
+  addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  });
+  setTimeout(hideTip, 5000);
+  fit();
+  fromHash();
+})();
+</script>
+</body>
+</html>

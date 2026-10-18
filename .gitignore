@@ -1,0 +1,18 @@
+# The zip is built by scripts/build-zip.sh and uploaded to GitHub Releases, not committed.
+dist/
+
+# Never commit secrets or local settings.
+.env
+.env.*
+*.pem
+*.key
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Tooling
+node_modules/

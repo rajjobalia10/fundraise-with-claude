@@ -1,0 +1,206 @@
+{
+  "about": "20 deck styles for deck-template.html. Pick one, open styles/<id>.json, paste its tokens into :root and its googleFonts into the <link>. Sample copy is invented for fictional companies.",
+  "default": "ember",
+  "styles": [
+    {
+      "id": "ember",
+      "name": "Ember",
+      "bestFor": "Pre-seed and seed decks that feel warm and human",
+      "decoration": "panel",
+      "fonts": "Fraunces + Inter",
+      "file": "styles/ember.json",
+      "preview": "previews/ember.png",
+      "preview2": "previews/ember-2.png"
+    },
+    {
+      "id": "harbor",
+      "name": "Harbor",
+      "bestFor": "Series A decks backed by real numbers",
+      "decoration": "dots",
+      "fonts": "Inter Tight + Inter",
+      "file": "styles/harbor.json",
+      "preview": "previews/harbor.png",
+      "preview2": "previews/harbor-2.png"
+    },
+    {
+      "id": "current",
+      "name": "Current",
+      "bestFor": "Tech startups with a strong growth chart",
+      "decoration": "wave",
+      "fonts": "Space Grotesk + DM Sans",
+      "file": "styles/current.json",
+      "preview": "previews/current.png",
+      "preview2": "previews/current-2.png"
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "bestFor": "Investor updates and board-ready decks",
+      "decoration": "rings",
+      "fonts": "Source Serif 4 + Source Sans 3",
+      "file": "styles/ledger.json",
+      "preview": "previews/ledger.png",
+      "preview2": "previews/ledger-2.png"
+    },
+    {
+      "id": "granite",
+      "name": "Granite",
+      "bestFor": "Fintech, infrastructure and serious B2B",
+      "decoration": "grid",
+      "fonts": "IBM Plex Serif + IBM Plex Sans",
+      "file": "styles/granite.json",
+      "preview": "previews/granite.png",
+      "preview2": "previews/granite-2.png"
+    },
+    {
+      "id": "stage",
+      "name": "Stage",
+      "bestFor": "Demo days and big-room pitches",
+      "decoration": "rays",
+      "fonts": "Manrope + Manrope",
+      "file": "styles/stage.json",
+      "preview": "previews/stage.png",
+      "preview2": "previews/stage-2.png"
+    },
+    {
+      "id": "grove",
+      "name": "Grove",
+      "bestFor": "Climate, food and impact startups",
+      "decoration": "wave",
+      "fonts": "DM Serif Display + DM Sans",
+      "file": "styles/grove.json",
+      "preview": "previews/grove.png",
+      "preview2": "previews/grove-2.png"
+    },
+    {
+      "id": "lantern",
+      "name": "Lantern",
+      "bestFor": "Fintech and data-heavy decks",
+      "decoration": "grain",
+      "fonts": "Archivo + Archivo",
+      "file": "styles/lantern.json",
+      "preview": "previews/lantern.png",
+      "preview2": "previews/lantern-2.png"
+    },
+    {
+      "id": "fern",
+      "name": "Fern",
+      "bestFor": "Consumer, beauty and wellness brands",
+      "decoration": "orbs",
+      "fonts": "Playfair Display + Karla",
+      "file": "styles/fern.json",
+      "preview": "previews/fern.png",
+      "preview2": "previews/fern-2.png"
+    },
+    {
+      "id": "dusk",
+      "name": "Dusk",
+      "bestFor": "Deep tech and research-led startups",
+      "decoration": "rings",
+      "fonts": "Outfit + Albert Sans",
+      "file": "styles/dusk.json",
+      "preview": "previews/dusk.png",
+      "preview2": "previews/dusk-2.png"
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow",
+      "bestFor": "Agritech, climate and calm impact stories",
+      "decoration": "hill",
+      "fonts": "Lora + Nunito Sans",
+      "file": "styles/meadow.json",
+      "preview": "previews/meadow.png",
+      "preview2": "previews/meadow-2.png"
+    },
+    {
+      "id": "forge",
+      "name": "Forge",
+      "bestFor": "Hardware, logistics and no-nonsense operators",
+      "decoration": "band",
+      "fonts": "Red Hat Display + Red Hat Text",
+      "file": "styles/forge.json",
+      "preview": "previews/forge.png",
+      "preview2": "previews/forge-2.png"
+    },
+    {
+      "id": "volt",
+      "name": "Volt",
+      "bestFor": "Bold consumer apps and developer tools",
+      "decoration": "grid",
+      "fonts": "Bricolage Grotesque + Figtree",
+      "file": "styles/volt.json",
+      "preview": "previews/volt.png",
+      "preview2": "previews/volt-2.png"
+    },
+    {
+      "id": "opal",
+      "name": "Opal",
+      "bestFor": "Health, care and mental-health startups",
+      "decoration": "rays",
+      "fonts": "Plus Jakarta Sans + Plus Jakarta Sans",
+      "file": "styles/opal.json",
+      "preview": "previews/opal.png",
+      "preview2": "previews/opal-2.png"
+    },
+    {
+      "id": "iris",
+      "name": "Iris",
+      "bestFor": "AI and product-led startups",
+      "decoration": "orbs",
+      "fonts": "Sora + Inter",
+      "file": "styles/iris.json",
+      "preview": "previews/iris.png",
+      "preview2": "previews/iris-2.png"
+    },
+    {
+      "id": "sorbet",
+      "name": "Sorbet",
+      "bestFor": "Friendly consumer and family products",
+      "decoration": "orbs",
+      "fonts": "Lexend + Mulish",
+      "file": "styles/sorbet.json",
+      "preview": "previews/sorbet.png",
+      "preview2": "previews/sorbet-2.png"
+    },
+    {
+      "id": "signal",
+      "name": "Signal",
+      "bestFor": "Sales-led startups that want a punchy pitch",
+      "decoration": "dots",
+      "fonts": "Oswald + Source Sans 3",
+      "file": "styles/signal.json",
+      "preview": "previews/signal.png",
+      "preview2": "previews/signal-2.png"
+    },
+    {
+      "id": "glacier",
+      "name": "Glacier",
+      "bestFor": "Climate tech and cold, clear data stories",
+      "decoration": "hill",
+      "fonts": "Hanken Grotesk + Hanken Grotesk",
+      "file": "styles/glacier.json",
+      "preview": "previews/glacier.png",
+      "preview2": "previews/glacier-2.png"
+    },
+    {
+      "id": "velvet",
+      "name": "Velvet",
+      "bestFor": "Hospitality, food and drink brands",
+      "decoration": "grain",
+      "fonts": "Newsreader + Libre Franklin",
+      "file": "styles/velvet.json",
+      "preview": "previews/velvet.png",
+      "preview2": "previews/velvet-2.png"
+    },
+    {
+      "id": "spark",
+      "name": "Spark",
+      "bestFor": "Creator tools and launch-day energy",
+      "decoration": "panel",
+      "fonts": "Onest + Onest",
+      "file": "styles/spark.json",
+      "preview": "previews/spark.png",
+      "preview2": "previews/spark-2.png"
+    }
+  ]
+}

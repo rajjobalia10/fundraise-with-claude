@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck styles</title>
+<!-- Made by scripts/render-previews.mjs. Edit the script, not this file. -->
+<style>
+  :root { --bg: #f6f5f1; --ink: #1f1f1f; --muted: #5c5c5c; --card: #ffffff; --line: #e4e1d9; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #151517; --ink: #ededed; --muted: #a6a6ad; --card: #1f1f22; --line: #2e2e33; } }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.45 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; padding: 40px 16px 64px; }
+  header, main { max-width: 1240px; margin: 0 auto; }
+  h1 { font-size: 32px; letter-spacing: -.02em; }
+  header p { color: var(--muted); margin: 8px 0 32px; max-width: 720px; }
+  main { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 28px; }
+  article { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  article img { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; display: block; }
+  article h2, article p { grid-column: 1 / -1; }
+  h2 { font-size: 19px; margin-top: 6px; }
+  code { font-size: 13px; color: var(--muted); font-weight: 400; }
+  .best { font-weight: 600; }
+  .mood { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Pick a style for your pitch deck</h1>
+    <p>Tell Claude the name you like, for example "use Harbor". Each style changes colours, fonts and the cover art. Your words stay the same. Every sample company here is made up.</p>
+  </header>
+  <main>
+    <article>
+      <img src="previews/ember.png" alt="Ember cover" loading="lazy">
+      <img src="previews/ember-2.png" alt="Ember chart slide" loading="lazy">
+      <h2>1. Ember <code>ember</code></h2>
+      <p class="best">Pre-seed and seed decks that feel warm and human</p>
+      <p class="mood">Warm cream paper, a coral glow, a soft editorial serif. Fonts: Fraunces + Inter.</p>
+    </article>
+    <article>
+      <img src="previews/harbor.png" alt="Harbor cover" loading="lazy">
+      <img src="previews/harbor-2.png" alt="Harbor chart slide" loading="lazy">
+      <h2>2. Harbor <code>harbor</code></h2>
+      <p class="best">Series A decks backed by real numbers</p>
+      <p class="mood">Confident cobalt blue, a clean grotesk, a calm dot grid. Fonts: Inter Tight + Inter.</p>
+    </article>
+    <article>
+      <img src="previews/current.png" alt="Current cover" loading="lazy">
+      <img src="previews/current-2.png" alt="Current chart slide" loading="lazy">
+      <h2>3. Current <code>current</code></h2>
+      <p class="best">Tech startups with a strong growth chart</p>
+      <p class="mood">Deep teal night, flowing waves, a bright orange spark. Fonts: Space Grotesk + DM Sans.</p>
+    </article>
+    <article>
+      <img src="previews/ledger.png" alt="Ledger cover" loading="lazy">
+      <img src="previews/ledger-2.png" alt="Ledger chart slide" loading="lazy">
+      <h2>4. Ledger <code>ledger</code></h2>
+      <p class="best">Investor updates and board-ready decks</p>
+      <p class="mood">Navy and old gold, a bookish serif, quiet rings. Fonts: Source Serif 4 + Source Sans 3.</p>
+    </article>
+    <article>
+      <img src="previews/granite.png" alt="Granite cover" loading="lazy">
+      <img src="previews/granite-2.png" alt="Granite chart slide" loading="lazy">
+      <h2>5. Granite <code>granite</code></h2>
+      <p class="best">Fintech, infrastructure and serious B2B</p>
+      <p class="mood">Charcoal and steel blue, an engineered serif, a fine grid. Fonts: IBM Plex Serif + IBM Plex Sans.</p>
+    </article>
+    <article>
+      <img src="previews/stage.png" alt="Stage cover" loading="lazy">
+      <img src="previews/stage-2.png" alt="Stage chart slide" loading="lazy">
+      <h2>6. Stage <code>stage</code></h2>
+      <p class="best">Demo days and big-room pitches</p>
+      <p class="mood">A spotlight in the dark, beams of light, bold sans titles. Fonts: Manrope + Manrope.</p>
+    </article>
+    <article>
+      <img src="previews/grove.png" alt="Grove cover" loading="lazy">
+      <img src="previews/grove-2.png" alt="Grove chart slide" loading="lazy">
+      <h2>7. Grove <code>grove</code></h2>
+      <p class="best">Climate, food and impact startups</p>
+      <p class="mood">Forest green and copper, a classic display serif, rolling waves. Fonts: DM Serif Display + DM Sans.</p>
+    </article>
+    <article>
+      <img src="previews/lantern.png" alt="Lantern cover" loading="lazy">
+      <img src="previews/lantern-2.png" alt="Lantern chart slide" loading="lazy">
+      <h2>8. Lantern <code>lantern</code></h2>
+      <p class="best">Fintech and data-heavy decks</p>
+      <p class="mood">Midnight blue, a signal-yellow accent, fine film grain. Fonts: Archivo + Archivo.</p>
+    </article>
+    <article>
+      <img src="previews/fern.png" alt="Fern cover" loading="lazy">
+      <img src="previews/fern-2.png" alt="Fern chart slide" loading="lazy">
+      <h2>9. Fern <code>fern</code></h2>
+      <p class="best">Consumer, beauty and wellness brands</p>
+      <p class="mood">Dark moss green, blush and sand, an elegant high-contrast serif. Fonts: Playfair Display + Karla.</p>
+    </article>
+    <article>
+      <img src="previews/dusk.png" alt="Dusk cover" loading="lazy">
+      <img src="previews/dusk-2.png" alt="Dusk chart slide" loading="lazy">
+      <h2>10. Dusk <code>dusk</code></h2>
+      <p class="best">Deep tech and research-led startups</p>
+      <p class="mood">Night sky navy, a peach glow, orbit rings. Fonts: Outfit + Albert Sans.</p>
+    </article>
+    <article>
+      <img src="previews/meadow.png" alt="Meadow cover" loading="lazy">
+      <img src="previews/meadow-2.png" alt="Meadow chart slide" loading="lazy">
+      <h2>11. Meadow <code>meadow</code></h2>
+      <p class="best">Agritech, climate and calm impact stories</p>
+      <p class="mood">Sage paper, field green, a sunny yellow over the hill. Fonts: Lora + Nunito Sans.</p>
+    </article>
+    <article>
+      <img src="previews/forge.png" alt="Forge cover" loading="lazy">
+      <img src="previews/forge-2.png" alt="Forge chart slide" loading="lazy">
+      <h2>12. Forge <code>forge</code></h2>
+      <p class="best">Hardware, logistics and no-nonsense operators</p>
+      <p class="mood">Deep teal and safety orange, a sturdy sans, a solid band. Fonts: Red Hat Display + Red Hat Text.</p>
+    </article>
+    <article>
+      <img src="previews/volt.png" alt="Volt cover" loading="lazy">
+      <img src="previews/volt-2.png" alt="Volt chart slide" loading="lazy">
+      <h2>13. Volt <code>volt</code></h2>
+      <p class="best">Bold consumer apps and developer tools</p>
+      <p class="mood">Graphite with an electric lime cover and a sharp grid. Fonts: Bricolage Grotesque + Figtree.</p>
+    </article>
+    <article>
+      <img src="previews/opal.png" alt="Opal cover" loading="lazy">
+      <img src="previews/opal-2.png" alt="Opal chart slide" loading="lazy">
+      <h2>14. Opal <code>opal</code></h2>
+      <p class="best">Health, care and mental-health startups</p>
+      <p class="mood">Mint and lilac light, a friendly rounded sans, soft beams. Fonts: Plus Jakarta Sans + Plus Jakarta Sans.</p>
+    </article>
+    <article>
+      <img src="previews/iris.png" alt="Iris cover" loading="lazy">
+      <img src="previews/iris-2.png" alt="Iris chart slide" loading="lazy">
+      <h2>15. Iris <code>iris</code></h2>
+      <p class="best">AI and product-led startups</p>
+      <p class="mood">Bright white with deep violet light and a crisp geometric sans. Fonts: Sora + Inter.</p>
+    </article>
+    <article>
+      <img src="previews/sorbet.png" alt="Sorbet cover" loading="lazy">
+      <img src="previews/sorbet-2.png" alt="Sorbet chart slide" loading="lazy">
+      <h2>16. Sorbet <code>sorbet</code></h2>
+      <p class="best">Friendly consumer and family products</p>
+      <p class="mood">Pastel sky to peach, soft bubbles, a round easy sans. Fonts: Lexend + Mulish.</p>
+    </article>
+    <article>
+      <img src="previews/signal.png" alt="Signal cover" loading="lazy">
+      <img src="previews/signal-2.png" alt="Signal chart slide" loading="lazy">
+      <h2>17. Signal <code>signal</code></h2>
+      <p class="best">Sales-led startups that want a punchy pitch</p>
+      <p class="mood">Black and signal red, tall uppercase titles, a dot matrix. Fonts: Oswald + Source Sans 3.</p>
+    </article>
+    <article>
+      <img src="previews/glacier.png" alt="Glacier cover" loading="lazy">
+      <img src="previews/glacier-2.png" alt="Glacier chart slide" loading="lazy">
+      <h2>18. Glacier <code>glacier</code></h2>
+      <p class="best">Climate tech and cold, clear data stories</p>
+      <p class="mood">Arctic navy, ice blue, a clean modern grotesk, a mountain line. Fonts: Hanken Grotesk + Hanken Grotesk.</p>
+    </article>
+    <article>
+      <img src="previews/velvet.png" alt="Velvet cover" loading="lazy">
+      <img src="previews/velvet-2.png" alt="Velvet chart slide" loading="lazy">
+      <h2>19. Velvet <code>velvet</code></h2>
+      <p class="best">Hospitality, food and drink brands</p>
+      <p class="mood">Burgundy velvet, golden light, a refined reading serif. Fonts: Newsreader + Libre Franklin.</p>
+    </article>
+    <article>
+      <img src="previews/spark.png" alt="Spark cover" loading="lazy">
+      <img src="previews/spark-2.png" alt="Spark chart slide" loading="lazy">
+      <h2>20. Spark <code>spark</code></h2>
+      <p class="best">Creator tools and launch-day energy</p>
+      <p class="mood">Clean white with a magenta-to-violet glow and a modern sans. Fonts: Onest + Onest.</p>
+    </article>
+  </main>
+</body>
+</html>

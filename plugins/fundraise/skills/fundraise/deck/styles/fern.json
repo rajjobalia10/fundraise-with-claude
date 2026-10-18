@@ -1,0 +1,86 @@
+{
+  "id": "fern",
+  "name": "Fern",
+  "bestFor": "Consumer, beauty and wellness brands",
+  "mood": "Dark moss green, blush and sand, an elegant high-contrast serif.",
+  "fonts": {
+    "head": "Playfair Display",
+    "body": "Karla"
+  },
+  "tokens": {
+    "bg": "#151A14",
+    "surface": "#1E251C",
+    "ink": "#F4ECE6",
+    "muted": "#BDB8A8",
+    "line": "#2B3428",
+    "accent": "#D9C9AE",
+    "accent2": "#FFBCCC",
+    "accentInk": "#151A14",
+    "positive": "#7DD39B",
+    "negative": "#FF8B7D",
+    "cover": "radial-gradient(80% 90% at 20% 20%, #2F3D2B 0%, #1B2219 55%, #151A14 100%)",
+    "coverInk": "#F4ECE6",
+    "headFont": "'Playfair Display', ui-serif, Georgia, 'Times New Roman', serif",
+    "bodyFont": "'Karla', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "18px",
+    "headWeight": 500,
+    "headCase": "none",
+    "headTrack": "-0.01em",
+    "decoration": "orbs"
+  },
+  "googleFonts": "family=Playfair+Display:wght@500;600&family=Karla:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Lumen & Leaf",
+    "oneLiner": "Clean skincare, refilled at your door.",
+    "lede": "Plant-based skincare in glass bottles we collect, clean and refill every month.",
+    "round": "Seed round · $2M",
+    "year": "2026",
+    "website": "lumenandleaf.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "8,400 people on a monthly refill",
+      "note": "Active subscribers at the end of each month.",
+      "unit": "subscribers",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        2100,
+        2900,
+        3800,
+        5000,
+        6600,
+        8400
+      ],
+      "callouts": [
+        {
+          "value": "$46",
+          "label": "average monthly order"
+        },
+        {
+          "value": "11,000",
+          "label": "bottles kept out of the bin"
+        }
+      ]
+    }
+  }
+}

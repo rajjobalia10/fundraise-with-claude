@@ -1,0 +1,24 @@
+{
+  "name": "fundraise-with-claude",
+  "description": "Free help for first-time founders raising money: find investors, write personal LinkedIn notes, apply to accelerators, pitch VCs and make your pitch deck.",
+  "owner": {
+    "name": "Rivesa Inc.",
+    "url": "https://fundingcalendar.com"
+  },
+  "plugins": [
+    {
+      "name": "fundraise",
+      "source": "./plugins/fundraise",
+      "description": "Claude finds investors, writes personal LinkedIn notes, fills accelerator forms with you and makes your pitch deck. Runs in your own Claude. No API key, no cost.",
+      "category": "productivity",
+      "keywords": [
+        "fundraising",
+        "startup",
+        "investors",
+        "accelerator",
+        "pitch-deck",
+        "linkedin"
+      ]
+    }
+  ]
+}

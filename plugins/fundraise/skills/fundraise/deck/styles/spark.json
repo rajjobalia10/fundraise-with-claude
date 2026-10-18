@@ -1,0 +1,86 @@
+{
+  "id": "spark",
+  "name": "Spark",
+  "bestFor": "Creator tools and launch-day energy",
+  "mood": "Clean white with a magenta-to-violet glow and a modern sans.",
+  "fonts": {
+    "head": "Onest",
+    "body": "Onest"
+  },
+  "tokens": {
+    "bg": "#FFFFFF",
+    "surface": "#F7F5FA",
+    "ink": "#150F20",
+    "muted": "#5E5870",
+    "line": "#ECE7F3",
+    "accent": "#C8245F",
+    "accent2": "#7B5CFF",
+    "accentInk": "#FFFFFF",
+    "positive": "#13824F",
+    "negative": "#D23A3A",
+    "cover": "#FFFFFF",
+    "coverInk": "#150F20",
+    "headFont": "'Onest', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Onest', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "22px",
+    "headWeight": 700,
+    "headCase": "none",
+    "headTrack": "-0.03em",
+    "decoration": "panel"
+  },
+  "googleFonts": "family=Onest:wght@400;500;600;700&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Snaptune",
+    "oneLiner": "Turn a long video into ten short ones, in a minute.",
+    "lede": "Creators upload once. Snaptune finds the best moments, adds captions and sizes them for every app.",
+    "round": "Seed round · $2.8M",
+    "year": "2026",
+    "website": "snaptune.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "190,000 clips made last month",
+      "note": "Short clips exported each month, in thousands.",
+      "unit": "k clips",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        22,
+        41,
+        63,
+        95,
+        140,
+        190
+      ],
+      "callouts": [
+        {
+          "value": "6,300",
+          "label": "paying creators"
+        },
+        {
+          "value": "$12",
+          "label": "a month per creator"
+        }
+      ]
+    }
+  }
+}

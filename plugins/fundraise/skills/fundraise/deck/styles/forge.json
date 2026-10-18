@@ -1,0 +1,87 @@
+{
+  "id": "forge",
+  "name": "Forge",
+  "bestFor": "Hardware, logistics and no-nonsense operators",
+  "mood": "Deep teal and safety orange, a sturdy sans, a solid band.",
+  "fonts": {
+    "head": "Red Hat Display",
+    "body": "Red Hat Text"
+  },
+  "tokens": {
+    "bg": "#FFFFFF",
+    "surface": "#FBF6F1",
+    "ink": "#1F1F1F",
+    "muted": "#55625F",
+    "line": "#ECE2D9",
+    "accent": "#F47121",
+    "accent2": "#0F4C4F",
+    "accentInk": "#1F1F1F",
+    "positive": "#0E7A56",
+    "negative": "#C8352A",
+    "cover": "linear-gradient(160deg, #135457 0%, #0B3A3C 100%)",
+    "coverInk": "#FFFFFF",
+    "headFont": "'Red Hat Display', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Red Hat Text', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "8px",
+    "headWeight": 800,
+    "headCase": "none",
+    "headTrack": "-0.02em",
+    "decoration": "band"
+  },
+  "googleFonts": "family=Red+Hat+Display:wght@600;700;800&family=Red+Hat+Text:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "business-model",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Boltyard",
+    "oneLiner": "Spare parts for factory machines, delivered tomorrow.",
+    "lede": "One place to find, price and order parts from 600 suppliers, so lines never stop for long.",
+    "round": "Series A · $9M",
+    "year": "2026",
+    "website": "boltyard.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "$1.8M of parts ordered last month",
+      "note": "Value of parts ordered through Boltyard each month, in thousands of dollars.",
+      "unit": "$k a month",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        640,
+        780,
+        950,
+        1180,
+        1460,
+        1800
+      ],
+      "callouts": [
+        {
+          "value": "22%",
+          "label": "average saving per part"
+        },
+        {
+          "value": "380",
+          "label": "factories ordering every month"
+        }
+      ]
+    }
+  }
+}

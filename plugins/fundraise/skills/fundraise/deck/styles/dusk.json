@@ -1,0 +1,86 @@
+{
+  "id": "dusk",
+  "name": "Dusk",
+  "bestFor": "Deep tech and research-led startups",
+  "mood": "Night sky navy, a peach glow, orbit rings.",
+  "fonts": {
+    "head": "Outfit",
+    "body": "Albert Sans"
+  },
+  "tokens": {
+    "bg": "#101820",
+    "surface": "#18232E",
+    "ink": "#F5EDE6",
+    "muted": "#AAB3BE",
+    "line": "#243242",
+    "accent": "#FEB173",
+    "accent2": "#F2C7A7",
+    "accentInk": "#101820",
+    "positive": "#4ED08A",
+    "negative": "#FF7B7B",
+    "cover": "radial-gradient(70% 80% at 78% 30%, #5A2E24 0%, #2A2230 40%, #101820 75%)",
+    "coverInk": "#FFE9D9",
+    "headFont": "'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Albert Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "12px",
+    "headWeight": 500,
+    "headCase": "none",
+    "headTrack": "-0.02em",
+    "decoration": "rings"
+  },
+  "googleFonts": "family=Outfit:wght@400;500;600&family=Albert+Sans:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "why-now",
+    "solution",
+    "product",
+    "market",
+    "competition",
+    "team",
+    "traction",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Helioform",
+    "oneLiner": "One coat, and solar panels make up to 9% more power.",
+    "lede": "Our coating turns more sunlight into power and goes on in the factory, in one step.",
+    "round": "Seed round · $4M",
+    "year": "2026",
+    "website": "helioform.example",
+    "growth": {
+      "eyebrow": "Proof",
+      "title": "Output gain proven in three field tests",
+      "note": "Extra power from coated panels, in percent, at each test site.",
+      "unit": "% more power",
+      "labels": [
+        "Lab",
+        "Pilot 1",
+        "Pilot 2",
+        "Pilot 3",
+        "Factory",
+        "Target"
+      ],
+      "values": [
+        4.1,
+        5.6,
+        6.8,
+        7.9,
+        8.6,
+        9.2
+      ],
+      "callouts": [
+        {
+          "value": "2",
+          "label": "panel makers testing on their lines"
+        },
+        {
+          "value": "3",
+          "label": "patents filed"
+        }
+      ]
+    }
+  }
+}

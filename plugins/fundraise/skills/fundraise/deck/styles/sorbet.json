@@ -1,0 +1,85 @@
+{
+  "id": "sorbet",
+  "name": "Sorbet",
+  "bestFor": "Friendly consumer and family products",
+  "mood": "Pastel sky to peach, soft bubbles, a round easy sans.",
+  "fonts": {
+    "head": "Lexend",
+    "body": "Mulish"
+  },
+  "tokens": {
+    "bg": "#FFFFFF",
+    "surface": "#F5F8FE",
+    "ink": "#1F1F1F",
+    "muted": "#56627C",
+    "line": "#E2E9F7",
+    "accent": "#3566CC",
+    "accent2": "#F4A6C6",
+    "accentInk": "#FFFFFF",
+    "positive": "#1F7D45",
+    "negative": "#C83E3E",
+    "cover": "linear-gradient(135deg, #DCE8FF 0%, #F6E3F1 55%, #FDE9D9 100%)",
+    "coverInk": "#1F2F5C",
+    "headFont": "'Lexend', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Mulish', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "28px",
+    "headWeight": 600,
+    "headCase": "none",
+    "headTrack": "-0.02em",
+    "decoration": "orbs"
+  },
+  "googleFonts": "family=Lexend:wght@500;600&family=Mulish:wght@400;600;700&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "why-now",
+    "product",
+    "market",
+    "traction",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Playpod",
+    "oneLiner": "Book after-school clubs your kids will love.",
+    "lede": "Parents find, book and pay for local clubs in one app. Clubs fill their spaces.",
+    "round": "Pre-seed · $600k",
+    "year": "2026",
+    "website": "playpod.example",
+    "growth": {
+      "eyebrow": "Early traction",
+      "title": "1,100 bookings in our first city",
+      "note": "Club bookings made in the app each month.",
+      "unit": "bookings",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        40,
+        90,
+        150,
+        210,
+        270,
+        340
+      ],
+      "callouts": [
+        {
+          "value": "85",
+          "label": "clubs listed"
+        },
+        {
+          "value": "4.9★",
+          "label": "parent rating"
+        }
+      ]
+    }
+  }
+}

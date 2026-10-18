@@ -1,0 +1,86 @@
+{
+  "id": "glacier",
+  "name": "Glacier",
+  "bestFor": "Climate tech and cold, clear data stories",
+  "mood": "Arctic navy, ice blue, a clean modern grotesk, a mountain line.",
+  "fonts": {
+    "head": "Hanken Grotesk",
+    "body": "Hanken Grotesk"
+  },
+  "tokens": {
+    "bg": "#0B1728",
+    "surface": "#13233B",
+    "ink": "#E8EEF7",
+    "muted": "#A3B4CD",
+    "line": "#1F3352",
+    "accent": "#8CC7FF",
+    "accent2": "#5C8FD6",
+    "accentInk": "#0B1728",
+    "positive": "#5CCB95",
+    "negative": "#F0876A",
+    "cover": "linear-gradient(180deg, #102440 0%, #0B1728 100%)",
+    "coverInk": "#E8EEF7",
+    "headFont": "'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "bodyFont": "'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "20px",
+    "headWeight": 600,
+    "headCase": "none",
+    "headTrack": "-0.025em",
+    "decoration": "hill"
+  },
+  "googleFonts": "family=Hanken+Grotesk:wght@400;500;600;700&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "why-now",
+    "solution",
+    "product",
+    "market",
+    "competition",
+    "team",
+    "traction",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Chillroute",
+    "oneLiner": "Know your vaccines stayed cold, all the way.",
+    "lede": "Tiny trackers in every box report temperature live, from the factory to the clinic.",
+    "round": "Seed round · $3.2M",
+    "year": "2026",
+    "website": "chillroute.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "41,000 cold boxes tracked last month",
+      "note": "Shipments tracked by Chillroute each month, in thousands.",
+      "unit": "k shipments",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        7,
+        11,
+        17,
+        24,
+        32,
+        41
+      ],
+      "callouts": [
+        {
+          "value": "$1.2M",
+          "label": "of medicine saved from spoiling"
+        },
+        {
+          "value": "9",
+          "label": "health networks using it"
+        }
+      ]
+    }
+  }
+}

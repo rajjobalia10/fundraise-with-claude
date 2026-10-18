@@ -1,0 +1,86 @@
+{
+  "id": "velvet",
+  "name": "Velvet",
+  "bestFor": "Hospitality, food and drink brands",
+  "mood": "Burgundy velvet, golden light, a refined reading serif.",
+  "fonts": {
+    "head": "Newsreader",
+    "body": "Libre Franklin"
+  },
+  "tokens": {
+    "bg": "#62293D",
+    "surface": "#6F3149",
+    "ink": "#FFF3DA",
+    "muted": "#F0D3C2",
+    "line": "#824058",
+    "accent": "#FFB404",
+    "accent2": "#FF8A5C",
+    "accentInk": "#3D1424",
+    "positive": "#9BD49F",
+    "negative": "#FFB0A8",
+    "cover": "linear-gradient(180deg, #4A1A2B 0%, #62293D 60%, #7A3550 100%)",
+    "coverInk": "#FFF3DA",
+    "headFont": "'Newsreader', ui-serif, Georgia, 'Times New Roman', serif",
+    "bodyFont": "'Libre Franklin', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "radius": "6px",
+    "headWeight": 500,
+    "headCase": "none",
+    "headTrack": "-0.015em",
+    "decoration": "grain"
+  },
+  "googleFonts": "family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Libre+Franklin:wght@400;500;600&display=swap",
+  "slideOrder": [
+    "cover",
+    "problem",
+    "solution",
+    "product",
+    "traction",
+    "growth",
+    "market",
+    "competition",
+    "team",
+    "raise",
+    "contact"
+  ],
+  "sample": {
+    "label": "Sample",
+    "company": "Corkline",
+    "oneLiner": "Wine bars that never run out of the good bottle.",
+    "lede": "Corkline counts stock from photos of the shelf and reorders before you run low.",
+    "round": "Seed round · $1.6M",
+    "year": "2026",
+    "website": "corkline.example",
+    "growth": {
+      "eyebrow": "Traction",
+      "title": "210 bars and restaurants on Corkline",
+      "note": "Venues paying for Corkline at the end of each month.",
+      "unit": "venues",
+      "labels": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "values": [
+        48,
+        71,
+        99,
+        128,
+        165,
+        210
+      ],
+      "callouts": [
+        {
+          "value": "-18%",
+          "label": "less money stuck in unsold wine"
+        },
+        {
+          "value": "$149",
+          "label": "per venue, per month"
+        }
+      ]
+    }
+  }
+}
